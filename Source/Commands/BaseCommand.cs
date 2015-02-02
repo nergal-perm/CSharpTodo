@@ -1,8 +1,8 @@
 ﻿/*
  * Created by SharpDevelop.
- * User: terekhov-ev
- * Date: 30.01.2015
- * Time: 16:30
+ * User: Yosemite
+ * Date: 02.02.2015
+ * Time: 6:39
  * 
  * To change this template use Tools | Options | Coding | Edit Standard Headers.
  */
@@ -11,11 +11,18 @@ using System;
 namespace C_Todo.Commands
 {
 	/// <summary>
-	/// Description of AddCommand.
+	/// Description of BaseCommand.
 	/// </summary>
-	public class AddCommand : BaseCommand
+	public abstract class BaseCommand: ICommand
 	{
-		public AddCommand()
+		private bool _datePrepend;
+		
+		public bool DatePrepend {
+			get { return _datePrepend; }
+			set { _datePrepend = value;}
+		}
+		
+		public BaseCommand()
 		{
 		}
 		
