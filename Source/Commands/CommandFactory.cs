@@ -28,7 +28,7 @@ namespace C_Todo.Commands
 			_arguments = args;
 		}
 		
-		public ICommand createCommand()
+		public BaseCommand createCommand()
 		{
 			BaseCommand comm;
 			switch(_action) {
@@ -44,9 +44,9 @@ namespace C_Todo.Commands
 		}
 		
 		private void setOptions(BaseCommand comm) {
-			foreach(string c in _options) {
+			foreach(char c in _options) {
 				switch(c) {
-					case "T":
+					case char.Parse("T"):
 						comm.DatePrepend=true;
 						break;
 					default:
