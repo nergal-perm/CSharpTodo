@@ -14,10 +14,16 @@ namespace C_Todo.Test
 	[TestFixture]
 	public class EnvironmentTest
 	{
+		private EnvironmentSettings pr;
+		
+		[TestFixtureSetUp]
+		public void setUp() {
+			pr = new EnvironmentSettings("");
+		}
+		
 		[Test]
 		public void should_get_file_paths()
 		{
-			EnvironmentSettings pr = new EnvironmentSettings();
 			Assert.AreEqual("D:/Documents/GD/Todo/todo.txt", pr.getFilePath("todo"), 
 			                "Ожидался правильный путь к файлу todo.txt");
 			Assert.AreEqual("D:/Documents/GD/Todo/done.txt", pr.getFilePath("done"), 
@@ -26,5 +32,12 @@ namespace C_Todo.Test
 			                "Ожидался правильный путь к файлу report.txt");
 			
 		}
+		
+		[Test]
+		public void should_get_show_context() {
+			Assert.IsTrue(pr.getShowContext());
+			Assert.IsFalse(new EnvironmentSettings("@").getShowContext());
+		}
+			
 	}
 }
