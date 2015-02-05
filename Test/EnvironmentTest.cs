@@ -37,7 +37,30 @@ namespace C_Todo.Test
 		public void should_get_show_context() {
 			Assert.IsTrue(pr.getShowContext());
 			Assert.IsFalse(new EnvironmentSettings("@").getShowContext());
+			Assert.IsTrue(new EnvironmentSettings("@@").getShowContext());
 		}
+
+		[Test]
+		public void should_get_show_project() {
+			Assert.IsTrue(pr.getShowProject());
+			Assert.IsFalse(new EnvironmentSettings("+").getShowProject());
+			Assert.IsTrue(new EnvironmentSettings("++").getShowProject());
+		}		
+		
+		[Test]
+		public void should_get_show_priority() {
+			Assert.IsTrue(pr.getShowPriority());
+			Assert.IsFalse(new EnvironmentSettings("P").getShowPriority());
+			Assert.IsTrue(new EnvironmentSettings("PP").getShowPriority());
+		}			
 			
+		[Test]
+		public void should_get_color_mode() {
+			Assert.IsTrue(pr.getColorMode());
+			Assert.IsFalse(new EnvironmentSettings("p").getColorMode());
+			Assert.IsTrue(new EnvironmentSettings("c").getColorMode());
+		}			
+
+	
 	}
 }

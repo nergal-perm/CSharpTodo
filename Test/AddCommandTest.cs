@@ -28,10 +28,9 @@ namespace C_Todo.Test
 		public void TestMethod()
 		{
 			ConsoleCommand target = new AddCommand();
-			string[] args = {"add", "-t", "add sample task"};
-			StringWriter sw = new StringWriter();
-			ConsoleCommandDispatcher.DispatchCommand(target, args, sw);
-			Console.Out.Write(sw.ToString());
+			string[] args = {"-@", "add", "add sample task"};
+			Program.Main(args);
+			
 		}
 	}
 }

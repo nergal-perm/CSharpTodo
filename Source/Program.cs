@@ -12,22 +12,26 @@ namespace C_Todo
 {
 	class Program
 	{
+		private static EnvironmentSettings _settings;
+		
 		public static void Main(string[] args)
 		{
-			//TODO: Распарсить аргументы и создать команду
-			
-			//TODO: Выполнить команду 
 			if (args.Length > 0) {
-				Console.WriteLine("Hello World!");				
-				Console.WriteLine("Command: " + args[0]);
-				Console.ReadKey();
+				//TODO: Распарсить аргументы
+				// Если есть ключи, то соответствующим образом изменить настройки
+				if (args[0].StartsWith("-")) {
+					_settings = new EnvironmentSettings(args[0].Substring(1));
+					
+				} else {
+					_settings = new EnvironmentSettings("");
+				}
+				// Создать команду, используя оставшиеся аргументы
+				Console.Out.WriteLine(args.ToString());
+				//TODO: Выполнить команду
 			} else {
-				Console.WriteLine("Input command:");
-				string userInput = Console.ReadLine();
-				while (userInput != "exit") {
-					userInput = Console.ReadLine();
-				}				
+				// Показать справочную систему
 			}
 		}
+
 	}
 }
