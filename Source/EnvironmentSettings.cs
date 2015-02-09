@@ -8,6 +8,8 @@
  */
 using System;
 using System.Data;
+using System.Linq.Expressions;
+using System.Text;
 
 namespace C_Todo
 {
@@ -130,6 +132,17 @@ namespace C_Todo
 				localSettings.Add("COLOR_MODE", System.Configuration.ConfigurationManager.AppSettings["COLOR_MODE"]);
 			}
 			return Boolean.Parse(localSettings["COLOR_MODE"].ToString());
-		}		
+		}	
+
+		public override string ToString() {
+			StringBuilder sb = new StringBuilder();
+			foreach (string key in localSettings.Keys) {
+				sb.Append(key).Append(": ").Append(localSettings[key].ToString()).AppendLine();
+			}
+				
+			return sb.ToString();
+		}
+
+			
 	}
 }

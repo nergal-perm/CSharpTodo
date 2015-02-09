@@ -60,7 +60,6 @@ namespace C_Todo.Test
 			Assert.IsFalse(new EnvironmentSettings("p").getColorMode());
 			Assert.IsTrue(new EnvironmentSettings("c").getColorMode());
 		}			
-
 	
 	}
 }
