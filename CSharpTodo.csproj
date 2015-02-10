@@ -67,10 +67,32 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Source\Commands\AddCommand.cs" />
+    <Compile Include="Source\Commands\AddManyCommand.cs" />
+    <Compile Include="Source\Commands\AddToCommand.cs" />
+    <Compile Include="Source\Commands\AppendCommand.cs" />
+    <Compile Include="Source\Commands\ArchiveCommand.cs" />
+    <Compile Include="Source\Commands\DeduplicateCommand.cs" />
+    <Compile Include="Source\Commands\DeleteCommand.cs" />
+    <Compile Include="Source\Commands\DeprioritizeCommand.cs" />
+    <Compile Include="Source\Commands\DoCommand.cs" />
+    <Compile Include="Source\Commands\HelpCommand.cs" />
+    <Compile Include="Source\Commands\ListAllCommand.cs" />
+    <Compile Include="Source\Commands\ListCommand.cs" />
+    <Compile Include="Source\Commands\ListContextsCommand.cs" />
+    <Compile Include="Source\Commands\ListFileCommand.cs" />
+    <Compile Include="Source\Commands\ListPrioritiesCommand.cs" />
+    <Compile Include="Source\Commands\ListProjectsCommand.cs" />
+    <Compile Include="Source\Commands\MoveCommand.cs" />
+    <Compile Include="Source\Commands\PrependCommand.cs" />
+    <Compile Include="Source\Commands\PrioritizeCommand.cs" />
+    <Compile Include="Source\Commands\ReplaceCommand.cs" />
+    <Compile Include="Source\Commands\ReportCommand.cs" />
+    <Compile Include="Source\Commands\ShortHelpCommand.cs" />
     <Compile Include="Source\EnvironmentSettings.cs" />
     <Compile Include="Source\Program.cs" />
     <Compile Include="Test\AddCommandTest.cs" />
     <Compile Include="Test\EnvironmentTest.cs" />
+    <Compile Include="Test\TaskTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Source\Commands" />

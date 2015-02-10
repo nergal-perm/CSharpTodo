@@ -8,14 +8,15 @@
  */
 using System;
 using System.Security.Cryptography;
+using ManyConsole;
 
 namespace C_Todo
 {
 	class Program
 	{
-		private static EnvironmentSettings _settings;
-		private static string _parameters;
-		private static string _command;
+		public static EnvironmentSettings _settings;
+		private static string _parameters = "";
+		private static string _command = "";
 		private static string[] _arguments;
 		
 		public static void Main(string[] args)
