@@ -11,7 +11,7 @@ using System.Data;
 using System.Linq.Expressions;
 using System.Text;
 
-namespace C_Todo
+namespace CSharpTodo
 {
 	/// <summary>
 	/// Глобально определяемые и существующие на момент выполнения команды
@@ -19,6 +19,8 @@ namespace C_Todo
 	/// </summary>
 	public class EnvironmentSettings
 	{
+		private const string PREPEND_DATE="PREPEND_DATE";
+		
 		public EnvironmentSettings(string args) {
 			localSettings = new PropertyCollection();
 			
@@ -75,11 +77,11 @@ namespace C_Todo
 			// t - добавлять к каждой новой задаче дату создания
 			// T - не добавлять дату создания к новым задачам (по умолчанию)
 			if (args.Contains("t")) {
-				localSettings.Add("PREPEND_DATE", true);
+				localSettings.Add(PREPEND_DATE, true);
 			} else if (args.Contains("T")) {
-				localSettings.Add("PREPEND_DATE", false);
+				localSettings.Add(PREPEND_DATE, false);
 			} else {
-				localSettings.Add("PREPEND_DATE", System.Configuration.ConfigurationManager.AppSettings["PREPEND_DATE"]);
+				localSettings.Add(PREPEND_DATE, System.Configuration.ConfigurationManager.AppSettings[PREPEND_DATE]);
 			}	
 
 			// n - не сохранять постоянные номера задач, удалять пустые строки (по умолчанию)
@@ -133,6 +135,10 @@ namespace C_Todo
 			}
 			return Boolean.Parse(localSettings["COLOR_MODE"].ToString());
 		}	
+		
+		public bool getPrependDate() {
+			return Boolean.Parse(localSettings[PREPEND_DATE].ToString());
+		}
 
 		public override string ToString() {
 			StringBuilder sb = new StringBuilder();

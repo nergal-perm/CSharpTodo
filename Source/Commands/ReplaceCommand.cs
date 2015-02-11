@@ -11,8 +11,8 @@ using System;
 namespace CSharpTodo.Commands
 {
 	/// <summary>
-	/// replace ITEM# "UPDATED TODO"
-	///   Replaces task on line ITEM# with UPDATED TODO.
+	/// replace ITEM# "UPDATED TODO_Item"
+	///   Replaces task on line ITEM# with UPDATED TODO_Item.
 	/// </summary>
 	public class ReplaceCommand
 	{

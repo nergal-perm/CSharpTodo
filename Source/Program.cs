@@ -7,10 +7,13 @@
  * To change this template use Tools | Options | Coding | Edit Standard Headers.
  */
 using System;
+using System.Collections.Generic;
 using System.Security.Cryptography;
+using System.Text;
+
 using ManyConsole;
 
-namespace C_Todo
+namespace CSharpTodo
 {
 	class Program
 	{
@@ -51,12 +54,27 @@ namespace C_Todo
 			// Создать команду, используя оставшиеся аргументы
 			
 			//TODO: Выполнить команду
-			
+			ConsoleCommandDispatcher.DispatchCommand(GetCommands(), _arguments, Console.Out, true);
 		}
 		
 		private static string showUsageHelp() {
 			return "TODO: Write short help system\n";
 		}
+		
+        public static IEnumerable<ConsoleCommand> GetCommands()
+        {
+            return ConsoleCommandDispatcher.FindCommandsInSameAssemblyAs(typeof(Program));
+        }			
 
+        public static void setGlobalSettings(string options) {
+        	_settings = new EnvironmentSettings(options);
+        }
+        
+        public static void ColoredConsoleWrite(ConsoleColor color, string text) {
+        	ConsoleColor originalColor = Console.ForegroundColor;
+        	Console.ForegroundColor = color;
+        	Console.Write(text);
+        	Console.ForegroundColor = originalColor;
+        }
 	}
 }

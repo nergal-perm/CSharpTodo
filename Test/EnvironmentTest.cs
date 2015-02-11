@@ -9,7 +9,7 @@
 using System;
 using NUnit.Framework;
 
-namespace C_Todo.Test
+namespace CSharpTodo.Test
 {
 	[TestFixture]
 	public class EnvironmentTest

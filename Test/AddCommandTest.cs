@@ -10,25 +10,21 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 
-using C_Todo.Commands;
+using CSharpTodo.Commands;
 using ManyConsole;
 using NUnit.Framework;
+using todotxtlib.net;
 
-namespace C_Todo.Test
+namespace CSharpTodo.Test
 {
 	[TestFixture]
 	public class AddCommandTest
 	{
-        private static IEnumerable<ConsoleCommand> GetCommands()
-        {
-            return ConsoleCommandDispatcher.FindCommandsInSameAssemblyAs(typeof(Program));
-        }		
-		
+
 		[Test]
-		public void TestMethod()
+		public void should_prepend_date()
 		{
-			Program.Main(new string[] {"add", "add sample task"});
-			ConsoleCommandDispatcher.DispatchCommand(GetCommands(), new string[] {"add", "add sample task"}, Console.Out, true);
+
 		}
 	}
 }
