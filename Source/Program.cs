@@ -7,6 +7,7 @@
  * To change this template use Tools | Options | Coding | Edit Standard Headers.
  */
 using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Text;
@@ -51,8 +52,10 @@ namespace CSharpTodo
 			
 			// Если есть ключи, то соответствующим образом изменить настройки
 			_settings = new EnvironmentSettings(_parameters);
-			// Создать команду, используя оставшиеся аргументы
 			
+			// TODO: Проверить наличие файлов, создать их при необходимости
+			
+			// Создать команду, используя оставшиеся аргументы
 			//TODO: Выполнить команду
 			ConsoleCommandDispatcher.DispatchCommand(GetCommands(), _arguments, Console.Out, true);
 		}

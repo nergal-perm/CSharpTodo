@@ -18,12 +18,10 @@ using todotxtlib.net;
 namespace CSharpTodo.Test
 {
 	[TestFixture]
-	public class AddCommandTest
-	{
+	public class AddCommandTest {
 
 		[Test]
-		public void should_prepend_date()
-		{
+		public void should_prepend_date() {
 
 		}
 	}

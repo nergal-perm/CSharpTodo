@@ -44,6 +44,7 @@ namespace CSharpTodo.Commands
 				Task t = new Task(sb.ToString());
 				tl.Add(t);
 				tl.SaveTasks(_filePath);
+				Console.Out.WriteLine("Добавлена задача №{0}: {1}", tl.IndexOf(t), t.Body);
 				return tl.IndexOf(t);
 			} catch (Exception e) {
 				Console.Out.WriteLine(e.Message);
